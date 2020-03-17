@@ -23,7 +23,7 @@ class BlogsController extends Controller
     }
 
     public function index(){
-        $blogs = Blog::where('status', 1)->latest()->get();
+        $blogs = Blog::where('status', 1)->latest()->paginate(2);
         //$blogs = Blog::latest()->get();
         return view('blogs.index', ['blogs'=> $blogs]);
     }
@@ -36,7 +36,7 @@ class BlogsController extends Controller
     public function store(Request $request){
         //validate
         $rules = [
-            'title' => ['required', 'min:10', 'max:160'],
+            'title' => ['required', 'min:5', 'max:160'],
             'content' => ['required', 'min:102'],
         ];
 

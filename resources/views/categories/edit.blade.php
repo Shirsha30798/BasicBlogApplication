@@ -18,9 +18,17 @@
                 <input type="text" name="name" class="form-control" value="{{ $category->name }}">
             </div>
             <button class="btn btn-outline-primary" type="submit">Update</button>
-            
-
+            <a class="btn btn btn-outline-danger btn-margin-right blank" href="{{ route('categories.index') }}">Back</a>
         </form>
+        <br>
+        
+        <br><br>
+        @if(Session::has('category_exists'))
+        <div class="alert alert-success" style>
+            {{ Session::get('category_exists') }}
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        </div>
+        @endif
     </div>
 
 </div>

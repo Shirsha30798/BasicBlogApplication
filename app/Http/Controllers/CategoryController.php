@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Session;
+use Validator;
 
 class CategoryController extends Controller
 {
@@ -37,11 +39,22 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
+        $input['name'] = $request['name'];
+
+        $rules = array('name' => 'unique:categories,name');
+
+        $validator = Validator::make($input, $rules);
+        if ($validator->fails()) {
+            Session::flash('category_exists','Category already exists');
+            return back();
+        }else{
         Category::create([
             'name'=>$request['name'],
             'slug'=>Str::slug($request['name'],'-'),
         ]);
-        return back();
+        return redirect('categories');
+        }
+
     }
 
     /**
@@ -77,11 +90,21 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $input['name'] = $request['name'];
+
+        $rules = array('name' => 'unique:categories,name');
+
+        $validator = Validator::make($input, $rules);
+        if ($validator->fails()) {
+            Session::flash('category_exists','Category already exists');
+            return back();
+        }else{
         $category = Category::findOrFail($id);
         $category->name = $request->name;
         $category->slug = Str::slug($request->name,'-');
         $category->save();
         return redirect('categories');
+        }
     }
 
     /**

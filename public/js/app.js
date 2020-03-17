@@ -49599,3 +49599,4 @@ module.exports = __webpack_require__(/*! E:\dev\Laravel_projects\soporific_mind\
 /***/ })
 
 /******/ });
+

@@ -10,7 +10,7 @@
             editor.save();
         });
     },
-    forced_root_block : false,
+    forced_root_block : true,
     plugins: [
       "advlist autolink lists link image charmap print preview hr anchor pagebreak",
       "searchreplace wordcount visualblocks visualchars code fullscreen",

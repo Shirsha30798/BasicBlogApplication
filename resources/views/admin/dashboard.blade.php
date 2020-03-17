@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@include('header_footer.footer')
+
 @section('content')
 
 
@@ -50,7 +52,21 @@
     </div>
     @endif
 </div>
-
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 
 

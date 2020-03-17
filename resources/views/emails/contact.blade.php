@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@include('header_footer.footer')
+
 @section('content')
 
 @include('partials.tinymce')

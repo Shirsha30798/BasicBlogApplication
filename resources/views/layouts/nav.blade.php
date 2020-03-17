@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+<nav class="navbar  sticky-top navbar-expand-md navbar-light bg-white shadow-sm">
     <div class="container-fluid">
         <a class="navbar-brand" href="{{ url('/') }}">
             {{ config('app.name', 'Laravel') }}
@@ -14,7 +14,6 @@
                 <li><a class="nav-link" href="{{ route('blogs') }}">Blogs <span
                             class="badge bg-dark text-white">{{ $blogs->count() }}</span></a></li>
                 <li><a class="nav-link" href="{{ route('categories.index') }}">Categories</a></li>
-                <li><a class="nav-link" href="{{ route('contact') }}">Contact us</a></li>
             </ul>
 
             <!-- Right Side Of Navbar -->

@@ -1,8 +1,11 @@
 @extends('layouts.app')
 
+
+@include('header_footer.footer')
+
 @section('content')
 
-<div class="container-fluid">
+<div class="container-fluid " id = "trash_container">
     <div class="jumbotron">
 
         <h1>Trash</h1>
